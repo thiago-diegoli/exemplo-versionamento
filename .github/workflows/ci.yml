@@ -59,7 +59,9 @@ jobs:
       - name: Atualizar versão no package.json
         run: |
           CURRENT_PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          echo "Versão atual no package.json: $CURRENT_PACKAGE_VERSION"
           if [ "$CURRENT_PACKAGE_VERSION" != "${{ env.new_version }}" ]; then
+            echo "Atualizando a versão no package.json para ${{ env.new_version }}"
             npm version ${{ env.new_version }} --no-git-tag-version
           else
             echo "A versão atual já é ${{ env.new_version }}. Nenhuma atualização necessária."
