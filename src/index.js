@@ -21,11 +21,6 @@ app.get('/api/test-3', (req, res) => {
   res.send({ message: 'Endpoint de teste 3'});
 });
 
-app.get('/api/test-4', (req, res) => {
-  res.send({ message: 'Endpoint de teste 4'});
-});
-
-
 app.listen(port, () => {
   console.log(`Listening http://localhost:${port}`);
 });
